@@ -1,4 +1,4 @@
-package com.devsuperior.Challenge03;
+package com.devsuperior.challenge03;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

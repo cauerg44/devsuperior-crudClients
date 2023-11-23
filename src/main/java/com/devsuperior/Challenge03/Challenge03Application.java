@@ -1,4 +1,4 @@
-package com.devsuperior.Challenge03;
+package com.devsuperior.challenge03;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
