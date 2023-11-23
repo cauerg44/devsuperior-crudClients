@@ -1,9 +1,9 @@
 package com.devsuperior.challenge03.controllers;
 
 import java.net.URI;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -33,8 +33,9 @@ public class ClientController {
 	}
 	
 	@GetMapping
-	public List<ClientDTO> findAll(Pageable pageable){
-		return service.findAll(pageable);
+	public ResponseEntity<Page<ClientDTO>> findAll(Pageable pageable){
+		Page<ClientDTO> dto = service.findAll(pageable);
+		return ResponseEntity.ok(dto);
 	}
 	
 	@PostMapping
