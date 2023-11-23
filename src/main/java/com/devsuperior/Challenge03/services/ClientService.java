@@ -38,6 +38,19 @@ public class ClientService {
 		return new ClientDTO(client);
 	}
 
+	@Transactional
+	public ClientDTO update(Long id, ClientDTO dto) {
+		Client client = repository.getReferenceById(id);
+		dtoToEntity(dto, client);
+		client = repository.save(client);
+		return new ClientDTO(client);
+	}
+		
+	@Transactional
+	public void delete(Long id) {
+		repository.deleteById(id);
+	}
+	
 	private void dtoToEntity(ClientDTO dto, Client client) {
 		client.setName(dto.getName());
 		client.setCpf(dto.getCpf());
